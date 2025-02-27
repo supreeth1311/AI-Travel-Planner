@@ -8,7 +8,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 def get_travel_options(source, destination):
     """Fetches travel options from AI model."""
     prompt = f"Find the best travel options from {source} to {destination}, including flights, trains, buses, and cabs with approximate costs."
-    model = genai.GenerativeModel(model_name="gemini-pro")
+    model = genai.GenerativeModel(model_name="models/gemini-2.0-flash-exp")
     response = model.generate_content(prompt)
     
     return response.text if response else "No response received. Try again."
