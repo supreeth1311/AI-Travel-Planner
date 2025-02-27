@@ -1,6 +1,13 @@
+# #import os
+# from dotenv import load_dotenv
+
+# load_dotenv()  # Load environment variables
+
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")  # API Key from .env
 import os
-from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables
+# Get API key from GitHub Secret (set during deployment)
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")  # API Key from .env
+if not GOOGLE_API_KEY:
+    raise ValueError("Missing API Key! Set GOOGLE_API_KEY in your environment.")
